@@ -15,6 +15,14 @@ For example, is using [kitty](https://sw.kovidgoyal.net/kitty/), add this to
 bindsym $mod+Return exec kitty -d "$(sway-cwd)"
 ```
 
+Note that `sway-cmd` must be on the `$PATH`, which won't include any additions
+set by your shell. You could place the binary in `/usr/local/bin` or include
+the full path:
+
+```
+bindsym $mod+Return exec kitty -d "$(/home/akupila/go/bin/sway-cwd)"
+```
+
 The inspiration came from
 [here](https://github.com/swaywm/sway/issues/1973#issuecomment-419504059).
 Unlike the shell script, this the `sway-cwd` binary is statically linked and
